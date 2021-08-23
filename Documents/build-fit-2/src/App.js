@@ -1,27 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
+import Navbar from './components/Navbar';
 import './App.css';
-import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
-import Navbar from './components/Navbar'
-import Services from './components/Services'
-import Header from './components/Header'
-import Items from './components/Items'
+import Home from './components/parts/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Services from './components/parts/Services';
+import Products from './components/parts/Products';
+// import SignUp from './components/pages/SignUp';
+
 function App() {
   return (
     <>
       <Router>
-        <Navbar/>
+        <Navbar />
         <Switch>
-          <Route path='/' exact />
+          <Route path='/' exact component={Home} />
+          <Route path='/services' component={Services} />
+          <Route path='/products' component={Products} />
+          {/* <Route path='/sign-up' component={SignUp} /> */}
         </Switch>
       </Router>
-      {/* <Navbar/>
-      <Header/>
-      <Items/>
-      <Services/>
-      
-      
-      
-      <h1>Hello from React</h1> */}
     </>
   );
 }

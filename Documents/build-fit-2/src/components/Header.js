@@ -1,29 +1,36 @@
 import React from 'react';
-import { Jumbotron, Button } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import bgimage from 'images';
+import '../App.css';
+import { Button } from './Button';
+import './Header.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
- 
-const Header = ( ) => {
+function Header() {
   return (
-    <div>
-      <Jumbotron style={{
-      backgroundColor: "dodgerBlue",
-      backgroundImage: "url(/bgimmage.jpg)",
-      height: "300px",
-      backgroundRepeat: "no-repeat"
-    }} >
-        <h1 className="display-3 ">Welcome to our gym!</h1>
-        <p className="lead">This is the place where you will find yourself in a better form than you were before</p>
-    
-        <p>You want to see our trainings or diets?</p>
-        <p className="lead">
-        <Button variant="outline-dark">See More</Button>
-        </p>
-      </Jumbotron>
+    <div className='hero-container'>
+      <img src='./images/bgimage.jpg'/>
+      {/* <video src='/videos/video-1.mp4' autoPlay loop muted /> */}
+      <h1 className='header-container-h'>NO PAIN, NO GAIN</h1>
+      <p className='header-container-p'>What are you waiting for?</p>
+      <div className='header-btns'>
+        <Button
+          className='btns'
+          buttonStyle='btn--outline'
+          buttonSize='btn--large'
+        >
+          GET STARTED
+        </Button>
+        <Button
+          className='btns'
+          buttonStyle='btn--primary'
+          buttonSize='btn--large'
+          onClick={console.log('hey')}
+        >
+          WATCH TRAILER <i className='far fa-play-circle' />
+        </Button>
+      </div>
     </div>
   );
-};
+}
 
-export default Header ;
+export default Header;
 
